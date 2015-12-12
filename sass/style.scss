@@ -22,17 +22,6 @@
 @import "slick";
 @import "woocommerce_pages";
 
-.site-content {
-	.lazyload,
-	.lazyloading {
-		opacity: 0;
-	}
-	.lazyloaded {
-		opacity: 1;
-		transition: opacity .3s ease-in;
-	}
-}
-
 body {
 	color: #5e5e5e;
 	font: {
