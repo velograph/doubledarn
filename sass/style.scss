@@ -434,3 +434,34 @@ body {
 		}
 	}
 }
+
+.custom-caps {
+	.custom-caps-intro {
+		h3 {
+			margin-top: $fifty;
+		}
+	}
+	.disclaimers {
+		@include media( $large-screen ) {
+			@include span-columns(5);
+		}
+		.disclaimer-section {
+			margin-bottom: $twentyfive;
+		}
+	}
+	.custom-caps-form {
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			@include shift(1);
+		}
+		.gform_wrapper {
+			margin-top: 0;
+			.gform_heading {
+				display: none;
+			}
+			.gfield_required {
+				color: $eggplant;
+			}
+		}
+	}
+}
