@@ -62,7 +62,7 @@
 
 			<div class="site-info">
 				<p class="copyright">&copy; <?php the_time('Y'); ?> <?php bloginfo('name'); ?></p>
-				<p class="built-by">Built by <a href="http://velograph.net" target="_blank">Velograph</a></p>
+				<p class="built-by">Built by <a href="http://velograph.co" target="_blank">Velograph</a></p>
 			</div><!-- .site-info -->
 
 		</div>
