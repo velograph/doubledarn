@@ -1,0 +1,19 @@
+/* Alexandria Regular */
+@font-face {
+font-family: 'alexandriaRegular';
+src: url('../fonts/alexandria-regular.eot');
+src: url('../fonts/alexandria-regular.eot?#iefix') format('embedded-opentype'),
+url('../fonts/alexandria-regular.woff') format('woff'),
+url('../fonts/alexandria-regular.ttf') format('truetype'),
+url('../fonts/alexandria-regular.svg#webfont') format('svg');
+}
+
+/* Alexandria Bold */
+@font-face {
+font-family: 'alexandriaBold';
+src: url('../fonts/alexandria-bold.eot');
+src: url('../fonts/alexandria-bold.eot?#iefix') format('embedded-opentype'),
+url('../fonts/alexandria-bold.woff') format('woff'),
+url('../fonts/alexandria-bold.ttf') format('truetype'),
+url('../fonts/alexandria-bold.svg#webfont') format('svg');
+}

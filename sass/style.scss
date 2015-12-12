@@ -1,0 +1,583 @@
+/*!
+* Theme Name:  Double Darn
+* Theme URI:   http://velograph.co
+* Description: Double Darn - Portland, OR
+* Author:      Velograph
+* Author URI:  http://velograph.co
+* Version:     0.1.0
+* Tags:
+* Text Domain: doubledarn
+* Domain Path: /languages/
+*
+* License:     Commercial
+*/
+
+@import "variables";
+@import "bourbon/bourbon";
+@import "base/grid-settings";
+@import "neat/neat";
+@import "base/base";
+
+@import "fonts";
+@import "slick";
+@import "woocommerce_pages";
+
+.site-content {
+	.lazyload,
+	.lazyloading {
+		opacity: 0;
+	}
+	.lazyloaded {
+		opacity: 1;
+		transition: opacity .3s ease-in;
+	}
+}
+
+body {
+	color: #5e5e5e;
+	font: {
+		family: $alexandria;
+		weight: 500;
+	}
+	line-height: 1.75;
+	margin: 0;
+	a, button, input[type="submit"] {
+		transition: all .2s ease-in-out;
+	}
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+	.skip-link {
+		position: absolute;
+		text-indent: -99999px;
+	}
+	select {
+		background: $white;
+		border-color: #c4c4c4;
+		height: $thirty;
+		width: 100%;
+	}
+	.button {
+		font-family: $alexandria;
+		padding: $ten;
+		text-transform: uppercase;
+		&:hover {
+			background: $marv;
+		}
+	}
+}
+
+.header {
+	@include row();
+	background: $eggplant;
+	border-bottom: 5px solid $marv;
+	.utility-header {
+		position: absolute;
+		top: $fifteen;
+		right: $fifteen;
+		z-index: 1;
+		.account-link {
+			margin-left: $ten;
+		}
+		a {
+			color: $white;
+			.cart-count {
+				vertical-align: super;
+			}
+			svg {
+				width: $twenty;
+				path {
+					fill: $white;
+				}
+			}
+		}
+	}
+	.hero-image {
+		img {
+			float: left;
+			opacity: .8;
+		}
+	}
+	.doubledarn-logo {
+		@include transform(translateX(-50%));
+		display: none;
+		left: 50%;
+		position: absolute;
+		top: $fifty;
+		width: 250px;
+		@include media( $large-screen ) {
+			display: block;
+			width: 300px;
+		}
+	}
+}
+
+.is-sticky {
+	.main-navigation {
+		background: $white;
+		z-index: 9;
+		.sticky-logo {
+			display: block;
+			svg {
+				left: $fifteen;
+				position: absolute;
+				top: $fifteen;
+				width: $fifty - 10;
+			}
+		}
+		.utility-header {
+			display: block;
+			right: $fifteen;
+			text-align: right;
+			.shopping-cart {
+				position: absolute;
+				right: 35px;
+				span, svg {
+					display: inline;
+				}
+			}
+			a {
+				position: absolute;
+				right: $fifteen;
+				top: $fifteen;
+				.cart-count {
+					position: absolute;
+					right: $twentyfive;
+					vertical-align: super;
+				}
+				svg {
+					width: $twenty;
+					path {
+						fill: $black;
+					}
+				}
+			}
+		}
+	}
+}
+
+.main-navigation {
+	display: none;
+	@include media( $large-screen ) {
+		@include row();
+		display: block;
+		.sticky-logo,
+		.utility-header {
+			display: none;
+		}
+		ul {
+			@include span-columns(8);
+			@include shift(2);
+			text-align: center;
+			li {
+				@include pad($fifteen);
+				display: block;
+				@include media( $medium-screen ) {
+					display: inline-block;
+				}
+				a {
+					font: {
+						family: $alexandriaBold;
+						size: $h5-font-size;
+					}
+					&:hover {
+						color: $eggplant;
+					}
+				}
+			}
+		}
+	}
+}
+
+.site-content {
+	@include outer-container;
+	@include pad( $twentyfive );
+	.mobile-doubledarn-logo {
+		margin-bottom: $twentyfive;
+		svg {
+			path {
+				fill: $black;
+			}
+		}
+		@include media( $large-screen ) {
+			display: none;
+		}
+	}
+	.front-page {
+		.intro-content {
+			@include row();
+			margin-bottom: $fifty;
+		}
+		.category-portal-row {
+			@include row();
+			margin-bottom: $hundred;
+			.category-portal {
+				margin-bottom: $fifty;
+				text-align: center;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+				@include media( $large-screen ) {
+					@include span-columns(4);
+					margin-bottom: 0;
+				}
+			}
+		}
+		.about-blurb {
+			@include row();
+			margin-bottom: $hundred;
+			.about-photo {
+				margin-bottom: $fifteen;
+			}
+			@include media( $medium-screen ) {
+				.about-photo {
+					@include span-columns(6);
+				}
+				.post-content {
+					@include span-columns(6);
+				}
+			}
+		}
+	}
+	.contact-inquiries {
+		@include row();
+		@include media( $large-screen ) {
+			.contact-info {
+				@include span-columns(6);
+			}
+			.contact-form {
+				@include span-columns(6);
+				.wpcf7-form {
+					select, input {
+						margin-bottom: $twentyfive;
+					}
+				}
+			}
+		}
+	}
+}
+
+.tax-product_cat {
+	.product-category-page {
+		@include row();
+	}
+	.shop-category-title {
+		margin-bottom: $twentyfive;
+		text-align: center;
+	}
+	.shop-category-meta {
+		margin-bottom: $fifty;
+		@include media( $large-screen ) {
+			@include span-columns(4);
+		}
+		h2 {
+			margin-bottom: $twentyfive;
+		}
+	}
+	.product-category-grid {
+		@include media( $large-screen ) {
+			@include span-columns(8);
+		}
+		.product-portal {
+			margin-bottom: $twentyfive;
+			@include media( $large-screen ) {
+				@include span-columns(4);
+				margin-bottom: $twentyfive;
+			}
+		}
+	}
+}
+
+.single-product {
+	.single-product-container {
+		@include row();
+		margin-bottom: $hundred;
+		.product-images {
+			margin-bottom: $fifty;
+			@include media( $large-screen ) {
+				@include span-columns(6);
+			}
+			.slick-list {
+				z-index: 1;
+			}
+			.slick-dots {
+				li {
+					display: inline-block;
+					margin-right: $five;
+					button {
+						background: $light-gray;
+						border-radius: 0;
+						height: $fifteen;
+						margin: 0;
+						padding: 0;
+						text-indent: -99999px;
+						width: $fifteen;
+					}
+				}
+				.slick-active {
+					button {
+						background: $white;
+						border: 1px solid $black;
+					}
+				}
+			}
+		}
+		.summary {
+			@include media( $large-screen ) {
+				@include span-columns(6);
+			}
+			.amount {
+				font-size: $h4-font-size;
+			}
+			.variations {
+				.label {
+					vertical-align: top;
+				}
+			}
+			.single_variation_wrap {
+				.quantity {
+					@include span-columns(3);
+					@include media( $large-screen ) {
+						@include span-columns(2);
+					}
+					.qty {
+						width: 60%;
+					}
+				}
+				.single_add_to_cart_button {
+					float: right;
+					@include media( $large-screen ) {
+						float: left;
+					}
+				}
+			}
+		}
+	}
+	.sizing-info {
+		@include row();
+		margin-bottom: $hundred;
+		text-align: center;
+	}
+	.related-products {
+		@include row();
+		text-align: center;
+		h2 {
+			margin-bottom: $twentyfive;
+		}
+		.product-portal {
+			@include media( $medium-screen ) {
+				@include span-columns(4);
+				// @include omega(3n);
+			}
+		}
+	}
+}
+
+.footer {
+	@include pad($fifty);
+	background: $eggplant;
+	border-bottom: 5px solid $marv;
+	border-top: 5px solid $marv;
+	color: $white;
+	text-align: center;
+	a {
+		color: $white;
+	}
+	.footer-content {
+		@include outer-container;
+		.doubledarn-logo {
+			@include row();
+			text-align: center;
+			svg {
+				width: 100%;
+				@include media( $large-screen ) {
+					width: 350px;
+				}
+			}
+		}
+		.navigation {
+			@include row();
+			ul {
+				@include span-columns(8);
+				@include shift(2);
+				text-align: center;
+				li {
+					@include pad($ten 0);
+					display: block;
+					font: {
+						family: $alexandriaBold;
+						size: $h4-font-size;
+					}
+					@include media( $large-screen ) {
+						@include pad($twentyfive $fifty);
+						display: inline-block;
+					}
+				}
+			}
+		}
+		.social-links {
+			@include row();
+			@include pad( $twentyfive );
+			a {
+				@include pad( 0 $fifteen );
+				@include media ( $medium-screen ) {
+					@include span-columns(1);
+					&:first-of-type {
+						@include shift(5);
+					}
+				}
+				margin-bottom: $fifteen;
+				svg {
+					width: 25px;
+				}
+			}
+		}
+		.site-info {
+			.copyright {
+				font-size: $h5-font-size;
+			}
+			.built-by {
+				font-size: $h6-font-size;
+				margin: 0;
+			}
+		}
+	}
+}
+
+/* Overlay style */
+#trigger-overlay {
+	background: transparent;
+	position: absolute;
+	z-index: 1;
+	svg {
+		width: $thirty;
+	}
+	@include media( $large-screen ) {
+		display: none;
+	}
+}
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: $eggplant;
+	z-index: 2;
+	.social-links {
+		svg {
+			margin: 0 $ten;
+			width: $twentyfive;
+		}
+	}
+}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+	width: $twentyfive;
+	height: $twentyfive;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: url(../images/cross.png) no-repeat center center;
+	text-indent: 200%;
+	color: transparent;
+	outline: none;
+	z-index: 100;
+}
+
+/* Menu style */
+.overlay nav {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	height: 50%;
+	font-size: 24px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+
+.overlay ul li {
+	display: block;
+	height: 20%;
+	height: calc(100% / 5);
+	min-height: 54px;
+}
+
+.overlay ul li a {
+	color: #fff;
+	display: block;
+	font-weight: 300;
+	position: relative;
+	text-transform: uppercase;
+	top: 50%;
+	@include transform(color(0.2s));
+	@include transform(translateY(-50%));
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: #e3fcb1;
+}
+
+/* Effects */
+.overlay-doubledarn {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+	transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-doubledarn.open {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.overlay-doubledarn nav {
+	-webkit-perspective: 1200px;
+	perspective: 1200px;
+}
+
+.overlay-doubledarn nav ul {
+	opacity: 0.4;
+	-webkit-transform: translateY(-25%) rotateX(35deg);
+	transform: translateY(-25%) rotateX(35deg);
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.overlay-doubledarn.open nav ul {
+	opacity: 1;
+	-webkit-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.overlay-doubledarn.close nav ul {
+	-webkit-transform: translateY(25%) rotateX(-35deg);
+	transform: translateY(25%) rotateX(-35deg);
+}
+
+@media screen and (max-height: 30.5em) {
+	.overlay nav {
+		height: 70%;
+		font-size: 34px;
+	}
+	.overlay ul li {
+		min-height: 34px;
+	}
+}
