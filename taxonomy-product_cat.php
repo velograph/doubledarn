@@ -64,7 +64,7 @@ get_header(); ?>
 						</a>
 
 						<a href="<?php the_permalink(); ?>">
-							<?php the_title(); ?>
+							<?php the_field('color'); ?>
 						</a>
 
 					</article>

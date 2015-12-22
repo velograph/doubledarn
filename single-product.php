@@ -22,6 +22,7 @@ get_header( 'shop' ); ?>
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  dots: true,
+		  fade: true,
 		  arrows: false,
 		});
 	});
