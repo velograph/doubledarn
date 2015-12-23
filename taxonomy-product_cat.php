@@ -25,7 +25,6 @@ get_header(); ?>
 
 		<section class="shop-category-meta">
 
-			<!-- Product Category image/title -->
 			<?php do_action( 'woocommerce_archive_description' ); ?>
 
 		</section>

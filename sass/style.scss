@@ -273,6 +273,7 @@ body {
 			margin-bottom: $twentyfive;
 			@include media( $large-screen ) {
 				@include span-columns(4);
+				@include omega(3n);
 				margin-bottom: $twentyfive;
 			}
 		}
@@ -280,6 +281,21 @@ body {
 }
 
 .single-product {
+	.woocommerce-message {
+		background: $eggplant;
+		color: $white;
+		margin-bottom: $twentyfive;
+		padding: $fifteen 0;
+		text-align: center;
+		a {
+			color: $white;
+			&:hover {
+				background: transparent;
+				color: $white;
+				text-decoration: underline;
+			}
+		}
+	}
 	.single-product-container {
 		@include row();
 		margin-bottom: $hundred;

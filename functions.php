@@ -51,6 +51,7 @@ function doubledarn_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'doubledarn' ),
+		'mobile' => __( 'Mobile Menu', 'doubledarn' ),
 	) );
 
 	/*
@@ -125,6 +126,19 @@ require get_template_directory() . '/inc/extras.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
+function woocommerce_category_image() {
+    if ( is_product_category() ){
+	    global $wp_query;
+	    $cat = $wp_query->get_queried_object();
+	    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+	    $image = wp_get_attachment_url( $thumbnail_id );
+	    if ( $image ) {
+		    echo '<img src="' . $image . '" alt="" />';
+		}
+	}
+}
 
 /**
  * Declare Woocommerce support

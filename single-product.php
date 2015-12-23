@@ -31,6 +31,20 @@ get_header( 'shop' ); ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
+		<?php
+			/**
+			 * woocommerce_before_single_product hook
+			 *
+			 * @hooked wc_print_notices - 10
+			 */
+			 do_action( 'woocommerce_before_single_product' );
+
+			 if ( post_password_required() ) {
+			 	echo get_the_password_form();
+			 	return;
+			 }
+		?>
+
 		<div class="single-product-container">
 
 			<div class="product-images">
