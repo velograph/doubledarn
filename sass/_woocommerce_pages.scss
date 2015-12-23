@@ -1,16 +1,37 @@
+.woocommerce-message,
+.woocommerce-error {
+	margin-bottom: $twentyfive;
+	padding: $fifteen 0;
+	text-align: center;
+	a {
+		color: $white;
+		&:hover {
+			background: transparent;
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+}
+.woocommerce-error {
+	background: #9d2929;
+	color: $white;
+}
+.woocommerce-message {
+	background: $eggplant;
+	color: $white;
+}
+
 .page.woocommerce-cart {
 	.content-area {
 		padding-top: 0;
 		.page-content-container {
 			.page-content{
-				@include span-columns(10);
-				@include shift(1);
 				.shop_table {
 					margin-bottom: $fifty;
 					.row {
+						@include row();
 						border-bottom: 1px solid $medium-gray;
-						margin-bottom: 0;
-						padding: $fifteen 0;
+						margin-bottom: $fifteen;
 						.section-title {
 							font-weight: 900;
 						}
@@ -93,7 +114,9 @@
 
 .bottom-of-cart {
 	@include row();
-	padding-top: $fifty;
+	@include media( $large-screen ) {
+		padding-top: $fifty;
+	}
 	.coupons {
 		@include media( $large-screen ) {
 			@include span-columns(6);
@@ -103,19 +126,29 @@
 			width: 50%;
 			input[type="submit"] {
 				background: $medium-gray;
+				&:hover {
+					background: $marv;
+				}
 			}
 		}
 		.update-cart {
 			margin-bottom: $twentyfive;
 			input[type="submit"] {
 				background: $medium-gray;
+				&:hover {
+					background: $marv;
+				}
 			}
 		}
 	}
 	.cart-collaterals {
 		@include media( $large-screen ) {
-			// clear: both;
 			@include span-columns(6);
+		}
+		#shipping_method {
+			label {
+				display: inline;
+			}
 		}
 		.wc-proceed-to-checkout {
 			@include row();
@@ -163,7 +196,7 @@
 							@include span-columns(6);
 							@include omega;
 						}
-						label[for="payment_method_intuit_qbms"] {
+						label[for=""] {
 							@include row();
 							img {
 								display: inline-block;
@@ -183,6 +216,13 @@
 										display: block;
 									}
 								}
+							}
+						}
+					}
+					.review-order {
+						.shipping {
+							label {
+								display: inline;
 							}
 						}
 					}
@@ -218,5 +258,10 @@
 		.lost_password {
 			font-size: 12px;
 		}
+	}
+}
+
+.woocommerce-account {
+	.login {
 	}
 }

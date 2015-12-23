@@ -49,7 +49,11 @@ body {
 		width: 100%;
 	}
 	.button {
+		background: $eggplant;
+		border-radius: 0;
+		color: $white;
 		font-family: $alexandria;
+		font-weight: bold;
 		padding: $ten;
 		text-transform: uppercase;
 		&:hover {
@@ -281,21 +285,6 @@ body {
 }
 
 .single-product {
-	.woocommerce-message {
-		background: $eggplant;
-		color: $white;
-		margin-bottom: $twentyfive;
-		padding: $fifteen 0;
-		text-align: center;
-		a {
-			color: $white;
-			&:hover {
-				background: transparent;
-				color: $white;
-				text-decoration: underline;
-			}
-		}
-	}
 	.single-product-container {
 		@include row();
 		margin-bottom: $hundred;
