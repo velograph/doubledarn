@@ -261,7 +261,13 @@
 	}
 }
 
-.woocommerce-account {
-	.login {
+.woocommerce-order-received {
+	.success {
+		background: $marv;
+		color: $white;
+		font-weight: 700;
+		margin-bottom: $twentyfive;
+		padding: $ten 0;
+		text-align: center;
 	}
 }

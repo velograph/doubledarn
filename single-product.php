@@ -113,7 +113,7 @@ get_header( 'shop' ); ?>
 				<div class="project-title-description">
 					<h1><?php the_title(); ?></h1>
 
-					<h5><?php the_field('product_quick_description'); ?></h5>
+					<!-- <h5><?php the_field('product_quick_description'); ?></h5> -->
 				</div>
 
 				<div class="product-selection">
